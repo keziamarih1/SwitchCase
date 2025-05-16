@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valor por Cliente</title>
+</head>
+<body>
+    <h1>Valor a ser pago por cada cliente</h1>
+
+    <div id="clientes"></div>
+
+    <script>
+        function obterParametrosURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const valorPorCliente = parseFloat(urlParams.get('valorPorCliente'));
+            const numClientes = parseInt(urlParams.get('numClientes'));
+            return { valorPorCliente, numClientes };
+        }
+
+        function exibirValores() {
+            const { valorPorCliente, numClientes } = obterParametrosURL();
+            const clientesDiv = document.getElementById("clientes");
+
+            for (let i = 1; i <= numClientes; i++) {
+                const clienteDiv = document.createElement("div");
+                clienteDiv.textContent = `Cliente ${i}: R$ ${valorPorCliente.toFixed(2)}`;
+                clientesDiv.appendChild(clienteDiv);
+            }
+        }
+
+        window.onload = exibirValores;
+    </script>
+</body>
+</html>

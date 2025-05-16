@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa</title>
+</head>
+<body>
+    <script>
+        let numeroCasa;
+
+        while (true) {
+            numeroCasa = parseInt(prompt("Coloque o número da sua casa:"));
+
+            if (!isNaN(numeroCasa)) {
+                break; // Sai do loop se for um número válido
+            } else {
+                alert("Por favor, coloque um número válido!");
+            }
+        }
+
+        // Calcula as casas vizinhas
+        let casaAnterior = numeroCasa - 1;
+        let casaPosterior = numeroCasa + 1;
+
+        // Exibe a mensagem final
+        alert(
+            "O número da minha casa é " + numeroCasa +
+            ", meu vizinho anterior mora na casa de número " + casaAnterior +
+            " e o vizinho posterior mora na casa de número " + casaPosterior + "."
+        );
+    </script>
+</body>
+</html>
