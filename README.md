@@ -1,4 +1,1 @@
-# exercicios
-# exercicios
-# exercícios
 # Exercicios
